@@ -21,7 +21,14 @@
       "styles": [
         "styles.css"
       ],
-      "scripts": [],
+      "scripts": [
+        "assets/js/jquery-3.1.0.min.js",
+        "assets/js/bootstrap.min.js",
+        "assets/js/bootstrap-notify.js",
+        "assets/js/chartist.min.js",
+        "assets/js/material.min.js",
+        "assets/js/material-dashboard.js"
+      ],
       "environmentSource": "environments/environment.ts",
       "environments": {
         "dev": "environments/environment.ts",
