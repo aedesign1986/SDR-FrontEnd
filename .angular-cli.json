@@ -27,7 +27,9 @@
         "assets/js/bootstrap-notify.js",
         "assets/js/chartist.min.js",
         "assets/js/material.min.js",
-        "assets/js/material-dashboard.js"
+        "assets/js/material-dashboard.js",
+        "assets/js/initMenu.js",
+        "assets/js/sidebar-moving-tab.js"
       ],
       "environmentSource": "environments/environment.ts",
       "environments": {
