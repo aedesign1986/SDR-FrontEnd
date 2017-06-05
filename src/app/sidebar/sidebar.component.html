@@ -9,36 +9,10 @@
 <div class="sidebar-wrapper">
   <div class="nav-container">
     <ul class="nav">
-      <!--<li  routerLinkActive="active" class="">-->
-        <!--&lt;!&ndash;*ngFor="let menuItem of menuItems"&ndash;&gt;-->
-        <!--<a  >-->
-          <!--&lt;!&ndash;[routerLink]="[menuItem.path]"&ndash;&gt;-->
-          <!--<i class="material-icons">{{menuItem.icon}}</i>-->
-          <!--<p>{{menuItem.title}}</p>-->
-        <!--</a>-->
-      <!--</li>-->
-      <li  routerLinkActive="active" class="active">
-        <!--*ngFor="let menuItem of menuItems"-->
-        <a  >
-          <!--[routerLink]="[menuItem.path]"-->
-          <i class="material-icons">dashboard</i>
-          <p>Home</p>
-        </a>
-      </li>
-      <li  routerLinkActive="active" class="active">
-        <!--*ngFor="let menuItem of menuItems"-->
-        <a  >
-          <!--[routerLink]="[menuItem.path]"-->
-          <i class="material-icons">person</i>
-          <p>Profile</p>
-        </a>
-      </li>
-      <li  routerLinkActive="active" class="active">
-        <!--*ngFor="let menuItem of menuItems"-->
-        <a  >
-          <!--[routerLink]="[menuItem.path]"-->
-          <i class="material-icons">list</i>
-          <p>To Do</p>
+      <li  routerLinkActive="active" class="" *ngFor="let menuItem of menuItems">
+        <a [routerLink]="[menuItem.path]" >
+          <i class="material-icons">{{menuItem.icon}}</i>
+          <p>{{menuItem.title}}</p>
         </a>
       </li>
     </ul>

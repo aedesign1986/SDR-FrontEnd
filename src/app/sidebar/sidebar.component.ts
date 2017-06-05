@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { APP_MENU } from './sideMenu.data';
+
 
 
 @Component({
@@ -11,6 +13,7 @@ export class SidebarComponent implements OnInit {
   constructor() { }
 
   ngOnInit() {
+    this.menuItems = APP_MENU;
   }
 
 }
