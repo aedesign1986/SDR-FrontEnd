@@ -10,27 +10,76 @@ import { ResumeComponent } from '../resume/resume.component';
 
 
 export const appRoutes: Routes = [
-  { path: '', redirectTo: '/dashboard', pathMatch: 'full'},
-  { path: 'dashboard', component: DashboardComponent },
-  { path: 'todoList', component: TodoListComponent },
-  { path: 'report', children: [
-    {path: '', component: ReportComponent }
-    // {path: ':id', component: },
-    // {path: ':id/edit', component: },
-    // {path: ':new', component: }
-  ]},
-  { path: 'workLog', component: WorklogComponent},
-  { path: 'profile', component: ProfileComponent},
-  { path: 'resume', component:  ResumeComponent},
-  { path: '**', redirectTo: '/dashboard'}
-];
+  {
+    path: '',
+    redirectTo: '/dashboard',
+    pathMatch: 'full',
+    data: {
+      menu: false
+    }
+  }, {
+    path: 'dashboard',
+    component: DashboardComponent,
+    data: {
+      menu:true,
+      title: 'DashBoard'
+    }
+  }, {
+    path: 'todoList',
+    component: TodoListComponent,
+    data: {
+      menu: true,
+      title: 'Todo List'
+    }
+  }, {
+    path: 'report',
+    data: {
+      menu: true,
+      title: 'Report'
+    },
+    children: [ {
+      path: '', component: ReportComponent
+    }
+      // {path: ':id', component: },
+      // {path: ':id/edit', component: },
+      // {path: ':new', component: }
+    ]
+  }, {
+    path: 'workLog',
+    component: WorklogComponent,
+    data: {
+      menu: true,
+      title: 'Work Log'
+    }
+  }, {
+    path: 'resume',
+    component: ResumeComponent,
+    data: {
+      menu: true,
+      title: 'Resume'
+    }
+  }, {
+    path: 'profile',
+    component: ProfileComponent,
+    data: {
+      menu: true,
+      title: 'Profile'
+    }
+  }, {
+    path: '**',
+    redirectTo: '/dashboard',
+    data: {
+      menu: false
+    }
+  } ];
 
 
-@NgModule({
+@NgModule ({
   imports: [
     CommonModule,
-    RouterModule.forRoot(appRoutes)
+    RouterModule.forRoot (appRoutes)
   ],
-  exports: [RouterModule]
+  exports: [ RouterModule ]
 })
-export class AppRoutingModule { }
+export class AppRoutingModule {
+}

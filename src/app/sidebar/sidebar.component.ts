@@ -1,10 +1,12 @@
 import { Component, OnInit } from '@angular/core';
-import { APP_MENU } from './sideMenu.data';
+
+import { ActivatedRoute, Data } from '@angular/router';
+import { appRoutes } from '../app-routing/app-routing.module';
 
 
+declare const $: any;
 
 
-declare var $: any;
 @Component({
   selector: 'app-sidebar',
   templateUrl: './sidebar.component.html',
@@ -12,11 +14,22 @@ declare var $: any;
 })
 export class SidebarComponent implements OnInit {
   public menuItems: any[];
-  constructor() { }
+  public actualState = 'Dashboard';
+  constructor(private route: ActivatedRoute) { }
 
   ngOnInit() {
     $.getScript('../../assets/js/sidebar-moving-tab.js');
-    this.menuItems = APP_MENU;
+    this.menuItems = appRoutes.filter(item => item.data.menu);
+    this.actualState = this.route.snapshot.data['title'];
+    console.log(this.route);
+    this.route.data.subscribe(
+        (data: Data) => {
+          console.log('Route Changed');
+          console.log(data);
+         this.actualState = data['title'];
+    }
+    );
   }
+
 
 }

@@ -1,0 +1,236 @@
+{
+  "todoList": [
+    {
+      "id": 0,
+      "completed": false,
+      "completedAt": "Date",
+      "createdAt": "Date",
+      "description": "Description for first Todo",
+      "issue": {
+        "name": "ISSUE01",
+        "path": "UrlPath"
+      },
+      "modified": "Date",
+      "started": false,
+      "status": 0,
+      "statusDesc": "Tast not yet Started",
+      "title": "Test Todo 01",
+      "user": 0,
+      "project": "project Name"
+    },
+    {
+      "id": 1,
+      "completed": false,
+      "completedAt": "Date",
+      "createdAt": "Date",
+      "description": "Description for first Todo",
+      "issue": {
+        "name": "ISSUE01",
+        "path": "UrlPath"
+      },
+      "modified": "Date",
+      "started": false,
+      "status": 0,
+      "statusDesc": "Tast not yet Started",
+      "title": "Test Todo 01",
+      "user": 0,
+      "project": "project Name"
+    },
+    {
+      "id": 2,
+      "completed": false,
+      "completedAt": "Date",
+      "createdAt": "Date",
+      "description": "Description for first Todo",
+      "issue": {
+        "name": "ISSUE01",
+        "path": "UrlPath"
+      },
+      "modified": "Date",
+      "started": false,
+      "status": 0,
+      "statusDesc": "Tast not yet Started",
+      "title": "Test Todo 01",
+      "user": 0,
+      "project": "project Name"
+    },
+    {
+      "id": 3,
+      "completed": false,
+      "completedAt": "Date",
+      "createdAt": "Date",
+      "description": "Description for first Todo",
+      "issue": {
+        "name": "ISSUE01",
+        "path": "UrlPath"
+      },
+      "modified": "Date",
+      "started": false,
+      "status": 0,
+      "statusDesc": "Tast not yet Started",
+      "title": "Test Todo 01",
+      "user": 0,
+      "project": "project Name"
+    },
+    {
+      "id": 4,
+      "completed": false,
+      "completedAt": "Date",
+      "createdAt": "Date",
+      "description": "Description for first Todo",
+      "issue": {
+        "name": "ISSUE01",
+        "path": "UrlPath"
+      },
+      "modified": "Date",
+      "started": false,
+      "status": 0,
+      "statusDesc": "Tast not yet Started",
+      "title": "Test Todo 01",
+      "user": 0,
+      "project": "project Name"
+    },
+    {
+      "id": 5,
+      "completed": false,
+      "completedAt": "Date",
+      "createdAt": "Date",
+      "description": "Description for first Todo",
+      "issue": {
+        "name": "ISSUE01",
+        "path": "UrlPath"
+      },
+      "modified": "Date",
+      "started": false,
+      "status": 0,
+      "statusDesc": "Tast not yet Started",
+      "title": "Test Todo 01",
+      "user": 0
+    }
+  ],
+  "todoStatus": {
+    "default": [
+      {
+        "active": true,
+        "id": 0,
+        "name": "Pending"
+      },
+      {
+        "active": true,
+        "id": 1,
+        "name": "Blocked"
+      },
+      {
+        "active": true,
+        "id": 2,
+        "name": "Completed"
+      }
+    ]
+  },
+  "dailyReports": [
+    {
+      "id": 0,
+      "user": 0,
+      "reportDate": "01-06-2017",
+      "completed": false,
+      "sended": false,
+      "scrumQuestions": {
+        "whatYesterday": "Descriptions with tasks did yesterday",
+        "whatToday": "Prevision for Today task I will do",
+        "impediments": "Are some impediment for continue with work, Environment Issues, etc.."
+      },
+      "jiraTasks": [
+        {
+          "id": 0,
+          "name": "Jira name",
+          "description": "Task realized on Jiras",
+          "path": "Url with Jira task",
+          "completed": false
+        },
+        {
+          "id": 1,
+          "name": "Jira name",
+          "description": "Task realized on Jiras",
+          "path": "Url with Jira task",
+          "completed": false
+        },
+        {
+          "id": 2,
+          "name": "Jira name",
+          "description": "Task realized on Jiras",
+          "path": "Url with Jira task",
+          "completed": false
+        },
+        {
+          "id": 3,
+          "name": "Jira name",
+          "description": "Task realized on Jiras",
+          "path": "Url with Jira task",
+          "completed": false
+        },
+        {
+          "id": 4,
+          "name": "Jira name",
+          "description": "Task realized on Jiras",
+          "path": "Url with Jira task",
+          "completed": false
+        }
+      ]
+    }
+  ],
+  "users": [
+    {
+      "id": 0,
+      "name": "User Name Title",
+      "username": "User Registereded Name",
+      "email": "User Email",
+      "description": "User personal Description",
+      "imagePath": "Image Personal path",
+      "gitHubProfile": "GitHub Profile Path",
+      "dailyReports": [
+        0,
+        1,
+        2,
+        3,
+        4
+      ],
+      "todoList": [
+        0,
+        1,
+        2,
+        3,
+        4
+      ],
+      "loggedHours": [
+        {
+          "period": "06-2017",
+          "workLog": [
+            {
+              "day": "01-06-2017",
+              "work": [
+                {
+                  "task": "Task title",
+                  "taskPath": "task url",
+                  "project": "Project Name",
+                  "hours": 2
+                },
+                {
+                  "task": "Task title",
+                  "taskPath": "task url",
+                  "project": "Project Name",
+                  "hours": 2
+                },
+                {
+                  "task": "Task title",
+                  "taskPath": "task url",
+                  "project": "Project Name",
+                  "hours": 2
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

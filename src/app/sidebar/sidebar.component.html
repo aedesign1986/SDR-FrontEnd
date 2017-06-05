@@ -3,7 +3,7 @@
     <div class="logo-img">
       <img src="/assets/img/angular2-logo-red.png"/>
     </div>
-    SDR - Tools
+    SDR - {{ actualState }}
   </a>
 </div>
 <div class="sidebar-wrapper">
@@ -12,7 +12,7 @@
       <li  routerLinkActive="active" class="" *ngFor="let menuItem of menuItems">
         <a [routerLink]="[menuItem.path]" >
           <i class="material-icons">{{menuItem.icon}}</i>
-          <p>{{menuItem.title}}</p>
+          <p>{{ menuItem.data.title }}</p>
         </a>
       </li>
     </ul>
