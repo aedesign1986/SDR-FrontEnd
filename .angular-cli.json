@@ -28,8 +28,8 @@
         "assets/js/chartist.min.js",
         "assets/js/material.min.js",
         "assets/js/material-dashboard.js",
-        "assets/js/initMenu.js",
-        "assets/js/sidebar-moving-tab.js"
+        "assets/js/initMenu.js"
+
       ],
       "environmentSource": "environments/environment.ts",
       "environments": {

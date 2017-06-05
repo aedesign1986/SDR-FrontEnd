@@ -3,6 +3,8 @@ import { APP_MENU } from './sideMenu.data';
 
 
 
+
+declare var $: any;
 @Component({
   selector: 'app-sidebar',
   templateUrl: './sidebar.component.html',
@@ -13,6 +15,7 @@ export class SidebarComponent implements OnInit {
   constructor() { }
 
   ngOnInit() {
+    $.getScript('../../assets/js/sidebar-moving-tab.js');
     this.menuItems = APP_MENU;
   }
 
