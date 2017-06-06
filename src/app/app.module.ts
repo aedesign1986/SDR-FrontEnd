@@ -14,6 +14,9 @@ import { ReportComponent } from './report/report.component';
 import { WorklogComponent } from './worklog/worklog.component';
 import { ProfileComponent } from './profile/profile.component';
 import { ResumeComponent } from './resume/resume.component';
+import { SigninComponent } from './auth/signin/signin.component';
+import { SignupComponent } from './auth/signup/signup.component';
+import { TodoViewComponent } from './todo-list/todo-view/todo-view.component';
 
 @NgModule({
   declarations: [
@@ -26,7 +29,10 @@ import { ResumeComponent } from './resume/resume.component';
     ReportComponent,
     WorklogComponent,
     ProfileComponent,
-    ResumeComponent
+    ResumeComponent,
+    SigninComponent,
+    SignupComponent,
+    TodoViewComponent
   ],
   imports: [
     BrowserModule,

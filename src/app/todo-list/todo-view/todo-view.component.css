@@ -1,0 +1,27 @@
+
+.pt-xs {
+    padding-top: 7px;
+}
+.pt-sm {
+    padding-top: 12px;
+}
+.pt-md {
+    padding-top: 20px;
+}
+.pt-lg {
+    padding-top: 26px;
+}
+
+.cursor-pointer {
+    cursor: pointer;
+}
+.pl-icon {
+    padding: 0px 5px;
+}
+.pr-sm {
+    padding-right: 40px;
+}
+
+.icons-edit {
+
+}
