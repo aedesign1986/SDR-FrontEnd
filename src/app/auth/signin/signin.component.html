@@ -2,7 +2,7 @@
   <div class="col-md-offset-3  col-md-6 col-xs-12">
     <div class="card">
     <!--<div class="card-header text-center" data-background-color="orange"><h3 class="title">Sign Up</h3></div>-->
-      <form (ngSubmit)="onSignIn(f)" #f="ngForm">
+      <form (ngSubmit)="onSignin(f)" #f="ngForm">
         <div class="card-content">
           <fieldset>
             <h2 class="text-center">SignIn</h2>
@@ -18,8 +18,8 @@
         </div>
         <div class="card-footer ">
           <div class="pull-right">
-          <a class="  btn btn-raised btn-google ">Sign Up</a>
-          <a class="  btn btn-raised ">Log In</a>
+          <button class="  btn btn-raised btn-google " type="submit">Sign In</button>
+          <a class="  btn btn-raised " (click)="onSignout()">SignOut</a>
           </div>
         </div>
       </form>

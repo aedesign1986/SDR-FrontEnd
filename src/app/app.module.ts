@@ -17,6 +17,14 @@ import { ResumeComponent } from './resume/resume.component';
 import { SigninComponent } from './auth/signin/signin.component';
 import { SignupComponent } from './auth/signup/signup.component';
 import { TodoViewComponent } from './todo-list/todo-view/todo-view.component';
+import { AuthService } from './auth/auth.service';
+import { AngularFireDatabaseModule } from 'angularfire2/database';
+import { AngularFireAuthModule } from 'angularfire2/auth';
+import { AngularFireModule } from 'angularfire2';
+import { environment } from '../environments/environment';
+
+
+
 
 @NgModule({
   declarations: [
@@ -38,9 +46,12 @@ import { TodoViewComponent } from './todo-list/todo-view/todo-view.component';
     BrowserModule,
     FormsModule,
     HttpModule,
-    AppRoutingModule
+    AppRoutingModule,
+    AngularFireModule.initializeApp(environment.firebase),
+    AngularFireDatabaseModule,
+    AngularFireAuthModule
   ],
-  providers: [],
+  providers: [AuthService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

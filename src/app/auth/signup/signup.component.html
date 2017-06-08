@@ -1,8 +1,8 @@
 <div class="row">
-  <div class="  col-md-12 col-xs-12">
+  <div class="  col-md-6 col-md-offset-3 col-xs-12">
     <div class="card">
       <!--<div class="card-header text-center" data-background-color="orange"><h3 class="title">Sign Up</h3></div>-->
-      <form (ngSubmit)="onSignUp(f)" #f="ngForm">
+      <form (ngSubmit)="onSignup(f)" #f="ngForm">
         <div class="card-content">
           <fieldset>
             <h2 class="text-center">SignUp</h2>
@@ -18,8 +18,8 @@
         </div>
         <div class="card-footer ">
           <div class="pull-right">
-            <a class="  btn btn-raised btn-google ">Sign Up</a>
-            <a class="  btn btn-raised ">Log In</a>
+            <button class="  btn btn-raised btn-google" type="submit">Sign Up</button>
+            <button class="  btn btn-raised ">cancel</button>
           </div>
         </div>
       </form>
