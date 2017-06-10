@@ -1,4 +1,7 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, Input, OnInit, ViewChild } from '@angular/core';
+import { NgForm } from '@angular/forms';
+import { ToDo } from '../../common/models/toDo.model';
+import { TodoListService } from '../todo-list.service';
 
 @Component({
   selector: 'app-todo-view',
@@ -6,31 +9,15 @@ import { Component, Input, OnInit } from '@angular/core';
   styleUrls: ['./todo-view.component.css']
 })
 export class TodoViewComponent implements OnInit {
-  public expanded: boolean;
-  public isEditable: boolean;
+
   @Input()
   public toDo;
+
 
   constructor() { }
 
   ngOnInit() {
-    this.expanded = false;
-    this.isEditable = false;
-  }
 
-  onExpand() {
-    this.expanded = true;
-    console.log('Clicked', this.toDo, this.expanded);
   }
-
-  onCompress() {
-    this.expanded = false;
-    this.isEditable = false;
-  }
-
-  onEditForm() {
-    this.isEditable = !this.isEditable;
-  }
-
 
 }

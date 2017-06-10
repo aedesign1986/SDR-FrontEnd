@@ -3,9 +3,9 @@ import { JiraTask } from './jiratask.model';
 export class ToDo {
 
   // Relationship Section
-  private id: number;
-  private user: number;
-  private project: string;
+  public id: string;
+  public user: string;
+  public project: string;
 
   // Status of To Do
   private completed: boolean;
@@ -21,6 +21,7 @@ export class ToDo {
   public statusDesc: string;
 
   public jira: JiraTask;
+
 
 
 }

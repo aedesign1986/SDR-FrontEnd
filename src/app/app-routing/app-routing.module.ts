@@ -7,6 +7,8 @@ import { TodoListComponent } from '../todo-list/todo-list.component';
 import { WorklogComponent } from '../worklog/worklog.component';
 import { ProfileComponent } from '../profile/profile.component';
 import { ResumeComponent } from '../resume/resume.component';
+import { SigninComponent } from '../auth/signin/signin.component';
+import { SignupComponent } from '../auth/signup/signup.component';
 
 
 export const appRoutes: Routes = [
@@ -64,6 +66,20 @@ export const appRoutes: Routes = [
     data: {
       menu: true,
       title: 'Profile'
+    }
+  }, {
+    path: 'signin',
+    component: SigninComponent,
+    data: {
+      menu: true,
+      title: 'SignIn'
+    }
+  }, {
+    path: 'signup',
+    component: SignupComponent,
+    data: {
+      menu: true,
+      title: 'SignUp'
     }
   }, {
     path: '**',

@@ -6,13 +6,16 @@ export class AuthService {
 
   public user;
   private userData;
+  public isUserLogged;
 
   constructor ( private afAuth: AngularFireAuth ) {
+    this.isUserLogged = false;
     this.user = this.afAuth.authState;
     this.user.subscribe(
         user => {
           // TODO improve Function to ONLY Recover interesting Data
           this.userData = user;
+          this.isUserLogged = user !== null;
         }
     );
   }
@@ -25,6 +28,7 @@ export class AuthService {
         ( response ) => {
           console.log ('Works');
           console.log (response);
+          this.isUserLogged = true;
         }
     );
 
@@ -36,20 +40,25 @@ export class AuthService {
             error => console.log (error)
         )
         .then (
-            response => console.log (response)
+            response => {
+              console.log (response);
+              this.isUserLogged = true;
+            }
         );
 
   }
 
   signoutUser () {
     this.afAuth.auth.signOut ();
+    this.isUserLogged = false;
   }
 
   getProfileData () {
-    return this.userData.email;
+    return this.userData;
   }
 
   getUserUid () {
-    return this.userData.uid;
+    return this.afAuth.auth.currentUser.uid;
+    // return this.userData.uid;
   }
 }

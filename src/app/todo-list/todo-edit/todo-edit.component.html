@@ -1,0 +1,84 @@
+<div class="container-fluid">
+  <form (ngSubmit)="onSubmit()" #todoEditForm="ngForm">
+    <div class="row">
+      <div class="col-md-7">
+        <fieldset [disabled]=" !isEditable ">
+          <div class="form-group form-black">
+            <label for="title" class="control-label">Title</label>
+            <input type="text" class="form-control" name="title" id="title" [(ngModel)]="toDo.title">
+          </div>
+        </fieldset>
+      </div>
+      <div class="col-md-2">
+        <div class="form-group pull-right pt-md">
+          <div class="togglebutton">
+            <label>
+              <input type="checkbox" name="completed" [(ngModel)]="toDo.completed" checked [disabled]="!isEditable">
+              <span [ngClass]="{'text-success': toDo.completed, 'text-danger': !toDo.completed}"> Completed </span>
+            </label>
+            <i class="material-icons text-success" *ngIf="toDo.completed">done</i>
+            <i class="material-icons text-danger" *ngIf="!toDo.completed">clear</i>
+          </div>
+        </div>
+
+      </div>
+
+      <div class="col-md-3 pt-lg text-right pr-sm">
+        <button type="button" class=" btn btn-fab btn-primary icons-edit" (click)="onEditForm()" *ngIf="!isEditable"><i class="material-icons">edit</i></button>
+        <button type="button" class=" btn btn-fab btn-primary icons-edit" (click)="onEditForm()" *ngIf="isEditable && !hasChanged"><i class="material-icons" >visibility</i></button>
+        <button type="button" class=" btn btn-fab btn-primary icons-edit" (click)="onEditForm()" *ngIf="isEditable && hasChanged"><i class="material-icons">file_upload</i></button>
+
+
+        <a class=" btn btn-fab btn-danger icons-edit " (click)="onDiscardChanges()"><i class="material-icons" >clear</i></a>
+        <a class=" btn btn-fab btn-success icons-edit "><i class="material-icons" >done</i></a>
+      </div>
+    </div>
+    <fieldset [disabled]=" !isEditable ">
+      <div class="row">
+        <div class="col-md-10">
+          <div class="form-group form-black label-floating">
+            <label for="description" class="control-label input-sm">Description</label>
+            <input type="text" class="form-control" name="description" id="description" [(ngModel)]="toDo.description">
+          </div>
+        </div>
+        <div class="col-md-2">
+          <label for="" class="control-label">Status</label>
+          <select name="status" id="" class="form-control" [(ngModel)]="toDo.status">
+            <option value="0">Zero</option>
+            <option value="1">one</option>
+            <option value="2">twoo</option>
+            <option value="3">Three</option>
+          </select>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-10">
+          <div class="form-group form-black">
+            <label for="description" class="control-label input-sm">Status Description</label>
+            <textarea name="" id="" rows="8" class="form-control" name="statusDesc" [(ngModel)]="toDo.statusDesc"></textarea>
+          </div>
+        </div>
+        <div class="col-md-2">
+          <div class="row">
+            <div class="">
+              <label for="spa-lbl">Issue / Reporter:</label>
+              <a id="spa-lbl" class="form-control">Issue Name</a>
+            </div>
+          </div>
+          <div class="row">
+            <div class="">
+              <label for="spa-lbl">SPA Branch:</label>
+              <a id="spa-lbl" class="form-control">SPA Branch Name</a>
+            </div>
+          </div>
+          <div class="row">
+            <div class="">
+              <label for="spa-lbl">MSA Branch:</label>
+              <a id="spa-lbl" class="form-control">MSA Branch Name</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </fieldset>
+  </form>
+</div>

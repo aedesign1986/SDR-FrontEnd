@@ -21,11 +21,11 @@ export class SidebarComponent implements OnInit {
     $.getScript('../../assets/js/sidebar-moving-tab.js');
     this.menuItems = appRoutes.filter(item => item.data.menu);
     this.actualState = this.route.snapshot.data['title'];
-    console.log(this.route);
+    // console.log(this.route);
     this.route.data.subscribe(
         (data: Data) => {
-          console.log('Route Changed');
-          console.log(data);
+         // console.log('Route Changed');
+         // console.log(data);
          this.actualState = data['title'];
     }
     );

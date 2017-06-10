@@ -22,6 +22,7 @@ import { AngularFireDatabaseModule } from 'angularfire2/database';
 import { AngularFireAuthModule } from 'angularfire2/auth';
 import { AngularFireModule } from 'angularfire2';
 import { environment } from '../environments/environment';
+import { TodoEditComponent } from './todo-list/todo-edit/todo-edit.component';
 
 
 
@@ -40,7 +41,8 @@ import { environment } from '../environments/environment';
     ResumeComponent,
     SigninComponent,
     SignupComponent,
-    TodoViewComponent
+    TodoViewComponent,
+    TodoEditComponent
   ],
   imports: [
     BrowserModule,
