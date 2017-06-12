@@ -23,6 +23,8 @@ import { AngularFireAuthModule } from 'angularfire2/auth';
 import { AngularFireModule } from 'angularfire2';
 import { environment } from '../environments/environment';
 import { TodoEditComponent } from './todo-list/todo-edit/todo-edit.component';
+import { SDRComponent } from './sdr/sdr.component';
+import {AuthGuard} from "./auth/auth.guard";
 
 
 
@@ -42,7 +44,8 @@ import { TodoEditComponent } from './todo-list/todo-edit/todo-edit.component';
     SigninComponent,
     SignupComponent,
     TodoViewComponent,
-    TodoEditComponent
+    TodoEditComponent,
+    SDRComponent
   ],
   imports: [
     BrowserModule,
@@ -53,7 +56,7 @@ import { TodoEditComponent } from './todo-list/todo-edit/todo-edit.component';
     AngularFireDatabaseModule,
     AngularFireAuthModule
   ],
-  providers: [AuthService],
+  providers: [AuthService, AuthGuard],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

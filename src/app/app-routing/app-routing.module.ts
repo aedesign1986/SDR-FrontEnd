@@ -9,85 +9,25 @@ import { ProfileComponent } from '../profile/profile.component';
 import { ResumeComponent } from '../resume/resume.component';
 import { SigninComponent } from '../auth/signin/signin.component';
 import { SignupComponent } from '../auth/signup/signup.component';
+import {SDRComponent} from "../sdr/sdr.component";
+import {AuthGuard} from "../auth/auth.guard";
 
 
 export const appRoutes: Routes = [
-  {
-    path: '',
-    redirectTo: '/dashboard',
-    pathMatch: 'full',
-    data: {
-      menu: false
-    }
-  }, {
-    path: 'dashboard',
-    component: DashboardComponent,
-    data: {
-      menu:true,
-      title: 'DashBoard'
-    }
-  }, {
-    path: 'todoList',
-    component: TodoListComponent,
-    data: {
-      menu: true,
-      title: 'Todo List'
-    }
-  }, {
-    path: 'report',
-    data: {
-      menu: true,
-      title: 'Report'
-    },
-    children: [ {
-      path: '', component: ReportComponent
-    }
-      // {path: ':id', component: },
-      // {path: ':id/edit', component: },
-      // {path: ':new', component: }
-    ]
-  }, {
-    path: 'workLog',
-    component: WorklogComponent,
-    data: {
-      menu: true,
-      title: 'Work Log'
-    }
-  }, {
-    path: 'resume',
-    component: ResumeComponent,
-    data: {
-      menu: true,
-      title: 'Resume'
-    }
-  }, {
-    path: 'profile',
-    component: ProfileComponent,
-    data: {
-      menu: true,
-      title: 'Profile'
-    }
-  }, {
-    path: 'signin',
-    component: SigninComponent,
-    data: {
-      menu: true,
-      title: 'SignIn'
-    }
-  }, {
-    path: 'signup',
-    component: SignupComponent,
-    data: {
-      menu: true,
-      title: 'SignUp'
-    }
-  }, {
-    path: '**',
-    redirectTo: '/dashboard',
-    data: {
-      menu: false
-    }
-  } ];
+  {path: '', redirectTo: '/SDR/dashboard', pathMatch: 'full'},
+  {path: 'signIn', component: SigninComponent},
+  {path: 'signUp', component: SignupComponent},
+  {path: 'SDR', component: SDRComponent, canActivate: [AuthGuard], children: [
+    {path: 'dashboard', component: DashboardComponent},
+    {path: 'toDoList', component: TodoListComponent},
+    {path: 'worklog', component: WorklogComponent},
+    {path: 'report', component: ReportComponent},
+    {path: 'resume', component: ResumeComponent},
+    {path: 'profile', component: ProfileComponent}
+  ]},
+  {path: '**', redirectTo: '/SDR/dashboard' }
+];
+
 
 
 @NgModule ({

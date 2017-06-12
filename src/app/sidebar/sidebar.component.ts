@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 
-import { ActivatedRoute, Data } from '@angular/router';
-import { appRoutes } from '../app-routing/app-routing.module';
+import { ActivatedRoute } from '@angular/router';
 
 
 declare const $: any;
@@ -13,22 +12,19 @@ declare const $: any;
   styleUrls: ['./sidebar.component.css']
 })
 export class SidebarComponent implements OnInit {
-  public menuItems: any[];
+  public menuItems = [
+    {path: '/SDR/dashboard', title: 'DashBoard'},
+    {path: '/SDR/toDoList', title: 'ToDoList'},
+    {path: '/SDR/report', title: 'Report'},
+    {path: '/SDR/worklog', title: 'Worklog'},
+    {path: '/SDR/resume', title: 'Resume'},
+    {path: '/SDR/profile', title: 'Profile'}
+  ];
   public actualState = 'Dashboard';
-  constructor(private route: ActivatedRoute) { }
+  constructor() { }
 
   ngOnInit() {
     $.getScript('../../assets/js/sidebar-moving-tab.js');
-    this.menuItems = appRoutes.filter(item => item.data.menu);
-    this.actualState = this.route.snapshot.data['title'];
-    // console.log(this.route);
-    this.route.data.subscribe(
-        (data: Data) => {
-         // console.log('Route Changed');
-         // console.log(data);
-         this.actualState = data['title'];
-    }
-    );
   }
 
 
