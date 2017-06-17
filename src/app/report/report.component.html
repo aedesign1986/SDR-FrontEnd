@@ -1,6 +1,122 @@
 <div class="main-content">
   <div class="container-fluid">
-    <p>
-      report works! </p>
+
+    <div class="col-md-12">
+
+      <div class="card">
+
+        <div class="card-content">
+          <form (ngSubmit)="onSubmit()" #reportEditForm="ngForm">
+            <div class="row">
+
+              <div class="col-md-4 col-xs-4">
+                <h2>Report:</h2>
+              </div>
+
+              <div class="col-md-3 col-xs-3">
+                <div class="form-group label-floating form-black">
+                  <label class="control-label" for="addon2">Report Date</label>
+                  <div class="input-group">
+
+                    <input type="text" id="addon2" class="form-control" ngx-mydatepicker [(ngModel)]="reportDate"
+                           [options]="myOptions" (click)="dp.toggleCalendar()" #dp="ngx-mydatepicker" name="reportDate"
+                           placeholder="Select a date">
+
+                    <span class="input-group-btn">
+                  <button type="button" class="btn btn-fab btn-fab-mini" (click)="dp.toggleCalendar()">
+                    <i class="material-icons">today</i>
+                  </button>
+                  <button type="button" class="btn btn-fab btn-fab-mini" (click)="dp.clearDate()">
+                    <i class="material-icons">clear</i>
+                    </button>
+                </span>
+                  </div>
+                </div>
+              </div>
+
+              <div class="col-md-5 text-right">
+                <button class="btn btn-google" type="submit">Save</button>
+                <button class="btn btn-google" type="button">Send</button>
+                <!--<button class="btn btn-google">Button</button>-->
+              </div>
+
+            </div>
+
+            <hr>
+
+            <div class="row">
+
+              <div class="col-md-4 col-xs-12">
+                <div class="form-group form-black label-floating">
+                  <label class="control-label">What I did Yesterday ?</label>
+                  <textarea name="" id="" rows="4" class="form-control" [(ngModel)]="whatYesterday"
+                            name="whatYesterday"></textarea>
+                </div>
+              </div>
+
+              <div class="col-md-4 col-xs-12">
+                <div class="form-group form-black label-floating">
+                  <label class="control-label">What I will do today ?</label>
+                  <textarea name="" id="" rows="4" class="form-control" [(ngModel)]="whatToday"
+                            name="whatToday"></textarea>
+                </div>
+              </div>
+
+              <div class="col-md-4 col-xs-12">
+                <div class="form-group form-black label-floating">
+                  <label class="control-label">Are any impediments on my way ?</label>
+                  <textarea name="" id="" rows="4" class="form-control" [(ngModel)]="areImpediments"
+                            name="areImpediments"></textarea>
+                </div>
+              </div>
+            </div>
+          </form>
+          <div class="row">
+
+            <div class="col-md-6 col-xs-12 text-center">
+              <h4>Jira Tasks</h4>
+              <hr>
+            </div>
+
+            <div class="col-md-6 col-xs-12 text-center">
+              <h4>WorkLog</h4>
+              <hr>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+    <div class="col-md-12">
+      <div class="card">
+        <div class="card-content table-responsive">
+          <div class="col-md-12 text-center">
+            <h3>Last Reports</h3>
+            <hr>
+          </div>
+          <div class="row">
+            <table class="table table-hover table-responsive">
+              <thead>
+              <th width="10%">Date</th>
+              <th width="30%">What Yesterday</th>
+              <th width="30%">What Today</th>
+              <th width="30%">Are impediments?</th>
+              </thead>
+              <tbody>
+              <tr *ngFor="let report of reports">
+                <td>{{ report.scrumQuestions.date }}</td>
+                <td><p>{{ report.scrumQuestions.whatYesterday }}</p></td>
+                <td><p>{{ report.scrumQuestions.whatToday }}</p></td>
+                <td>{{ report.scrumQuestions.areImpediments }}</td>
+              </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
   </div>
 </div>

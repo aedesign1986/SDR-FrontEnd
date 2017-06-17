@@ -23,14 +23,18 @@
 
       </div>
 
-      <div class="col-md-3 pt-lg text-right pr-sm">
-        <button type="button" class=" btn btn-fab btn-primary icons-edit" (click)="onEditForm()" *ngIf="!isEditable"><i class="material-icons">edit</i></button>
-        <button type="button" class=" btn btn-fab btn-primary icons-edit" (click)="onEditForm()" *ngIf="isEditable && !hasChanged"><i class="material-icons" >visibility</i></button>
-        <button type="button" class=" btn btn-fab btn-primary icons-edit" (click)="onEditForm()" *ngIf="isEditable && hasChanged"><i class="material-icons">file_upload</i></button>
+      <div class="col-md-3">
+        <span class="btn-group-sm">
+          <button type="button" class=" btn btn-primary btn-simple  " (click)="onEditForm()" *ngIf="!isEditable"><i class="material-icons" style="font-size: 300%;">edit</i></button>
+          <button type="button" class=" btn btn-primary btn-simple " (click)="onEditForm()" *ngIf="isEditable && !hasChanged"><i class="material-icons" style="font-size: 300%;" >visibility</i></button>
+          <button type="button" class=" btn btn-primary btn-simple  " (click)="onEditForm()" *ngIf="isEditable && hasChanged"><i class="material-icons" style="font-size: 300%;">file_upload</i></button>
+
+        </span>
 
 
-        <a class=" btn btn-fab btn-danger icons-edit " (click)="onDiscardChanges()"><i class="material-icons" >clear</i></a>
-        <a class=" btn btn-fab btn-success icons-edit "><i class="material-icons" >done</i></a>
+
+        <a class=" btn btn btn-primary btn-simple btn-danger   " (click)="onDiscardChanges()"><i class="material-icons" style="font-size: 300%;" >clear</i></a>
+        <a class=" btn btn-primary btn-simple btn-success   "><span class="material-icons" style="font-size: 300%;" >done</span></a>
       </div>
     </div>
     <fieldset [disabled]=" !isEditable ">

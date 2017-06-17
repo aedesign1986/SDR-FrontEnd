@@ -24,7 +24,9 @@ import { AngularFireModule } from 'angularfire2';
 import { environment } from '../environments/environment';
 import { TodoEditComponent } from './todo-list/todo-edit/todo-edit.component';
 import { SDRComponent } from './sdr/sdr.component';
-import {AuthGuard} from "./auth/auth.guard";
+import {AuthGuard} from './auth/auth.guard';
+
+import { NgxMyDatePickerModule } from 'ngx-mydatepicker';
 
 
 
@@ -54,7 +56,8 @@ import {AuthGuard} from "./auth/auth.guard";
     AppRoutingModule,
     AngularFireModule.initializeApp(environment.firebase),
     AngularFireDatabaseModule,
-    AngularFireAuthModule
+    AngularFireAuthModule,
+    NgxMyDatePickerModule
   ],
   providers: [AuthService, AuthGuard],
   bootstrap: [AppComponent]
